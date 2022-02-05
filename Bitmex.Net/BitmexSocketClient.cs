@@ -139,7 +139,7 @@ namespace Bitmex.Net.Client
                 }
                 if (toRemove.Any())
                 {
-                    log.Write(LogLevel.Warning, $"Not sending another subscribe request for topics: {String.Join(',', toRemove)}, cause it was already sended");
+                    log.Write(LogLevel.Warning, $"Not sending another subscribe request for topics: {String.Join(",", toRemove)}, cause it was already sended");
                     request.Args.RemoveAll(c => toRemove.Contains(c));
                 }
             }

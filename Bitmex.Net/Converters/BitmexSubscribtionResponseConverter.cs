@@ -6,6 +6,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Management.Automation;
 using System.Text;
 
 namespace Bitmex.Net.Client.Converters
@@ -13,7 +14,7 @@ namespace Bitmex.Net.Client.Converters
     public class BitmexSubscribtionResponseConverter : JsonConverter<BitmexSubscribeRequest>
     {
 
-        public override BitmexSubscribeRequest ReadJson(JsonReader reader, Type objectType, [AllowNull] BitmexSubscribeRequest existingValue, bool hasExistingValue, JsonSerializer serializer)
+        public override BitmexSubscribeRequest ReadJson(JsonReader reader, Type objectType, BitmexSubscribeRequest? existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             JObject t = JObject.Load(reader);
             var arg = new List<object>();
@@ -36,7 +37,7 @@ namespace Bitmex.Net.Client.Converters
 
 
 
-        public override void WriteJson(JsonWriter writer, [AllowNull] BitmexSubscribeRequest value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, BitmexSubscribeRequest? value, JsonSerializer serializer)
         {
 
         }
